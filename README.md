@@ -71,3 +71,7 @@ Download the picuno.py file from <a href="https://github.com/atulravi/AtrivaTECH
     <span style="color: #ffffff">machine.Pin(</span><span style="color: #0086f7; font-weight: bold">2</span><span style="color: #ffffff">,</span> <span style="color: #ffffff">machine.Pin.OUT).value(</span><span style="color: #0086f7; font-weight: bold">0</span><span style="color: #ffffff">)</span>
     <span style="color: #ffffff">utime.sleep(</span><span style="color: #0086f7; font-weight: bold">1</span><span style="color: #ffffff">)</span>
 </pre></div>
+
+## Credits
+Code maintained by Atul Ravi-Founder It's On Group <br>
+Special Thanks to CodeItDoIt on GitHub for the addition of comments. 
