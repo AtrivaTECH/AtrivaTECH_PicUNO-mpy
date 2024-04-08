@@ -1,0 +1,1 @@
+Folder consists of main library python files that can be used with the PicUNO and all compatible boards. Follow Installation in <a href="https://github.com/atulravi/AtrivaTECH_PicUNO-mpy/blob/main/README.md"> README.md</a> in the root to see installation and sample usage.
