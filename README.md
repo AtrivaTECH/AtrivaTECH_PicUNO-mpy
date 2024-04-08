@@ -5,10 +5,17 @@ Micropython board library with special functions and variables for PicUNO
 1) board<br>
    a) lvlset()<br>
      Sets Level shifted GPIOs LOW since they stay high always. Best used at start of program.<br>
-   b) LED_BUILTIN [variable]<br>
+   b) LED_BUILTIN [variable] <br>
      Sets GPIO 14 as output with machine.pin and can be used to manipulate inbuilt LED Directly with LED_BUILTIN.value(0/1)<br>
 2) Neopixel<br>
    Based on Adafruit's Neopixel library for thr neopixels for micropython which can be used to control neopixels. No extra library required.
+
+## Installation
+Download the picuno.py file from <a href="https://github.com/atulravi/AtrivaTECH_PicUNO-mpy/tree/main/picuno">/picuno</a> and upload it to the root folder of your PicUNO via the file manager in Thonny. Then use the below method at the start of the program to import the library.
+<!-- HTML generated using hilite.me -->
+<div style="background: #111111; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #fb660a; font-weight: bold">from</span> <span style="color: #ffffff">picuno</span> <span style="color: #fb660a; font-weight: bold">import</span> <span style="color: #ffffff">board</span>
+</pre></div>
+
 
 ### Sample usage:
 1) Neopixel module:<br>
