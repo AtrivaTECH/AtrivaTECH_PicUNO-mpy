@@ -1,18 +1,24 @@
+''' Original Code by Atul Ravi, AtrivaTECH (atrivatech.com)
+Licensed under GPL V3.
+Written for the PicUNO. Maintained by ESCcrasci and team and other contributors on GitHub
+'''
+
 import rp2
 import machine
 import rp2
 from machine import Pin
 import array, time
 
-class board:
-    LED_BUILTIN = machine.Pin(14,machine.Pin.OUT)
+class board: #fundamental board class consisting of built in functions for use with picuno
+    LED_BUILTIN = machine.Pin(14,machine.Pin.OUT) #LED_BUILTIN variable setting GP14 as output. 
 
     def lvlpins():
-        machine.Pin(2, machine.Pin.OUT).value(0)
+        machine.Pin(2, machine.Pin.OUT).value(0) #sets level shifted GPIOS low as they are always high
         machine.Pin(3, machine.Pin.OUT).value(0)
         machine.Pin(4, machine.Pin.OUT).value(0)
         machine.Pin(5, machine.Pin.OUT).value(0)
-    
+
+#--NEOPIXEL CODE. ORIGINALLY BY ADAFRUIT--    
 # PIO state machine for RGB. Pulls 24 bits (rgb -> 3 * 8bit) automatically
 @rp2.asm_pio(sideset_init=rp2.PIO.OUT_LOW, out_shiftdir=rp2.PIO.SHIFT_LEFT, autopull=True, pull_thresh=24)
 def ws2812():
