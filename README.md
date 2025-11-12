@@ -73,5 +73,5 @@ Download the picuno.py file from <a href="https://github.com/atulravi/AtrivaTECH
 </pre></div>
 
 ## Credits
-Code maintained by Atul Ravi-Founder It's On Group <br>
+Code maintained by Atul Ravi-Founder Atrivatech P Ltd <br>
 Special Thanks to CodeItDoIt on GitHub for the addition of comments. 
