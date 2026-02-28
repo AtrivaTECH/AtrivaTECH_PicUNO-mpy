@@ -12,66 +12,71 @@ Micropython board library with special functions and variables for PicUNO
 
 ## Installation
 Download the picuno.py file from <a href="https://github.com/atulravi/AtrivaTECH_PicUNO-mpy/tree/main/picuno">/picuno</a> and upload it to the root folder of your PicUNO via the file manager in Thonny. Then use the below method at the start of the program to import the library.
-<!-- HTML generated using hilite.me -->
-<div style="background: #111111; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #fb660a; font-weight: bold">from</span> <span style="color: #ffffff">picuno</span> <span style="color: #fb660a; font-weight: bold">import</span> <span style="color: #ffffff">board</span>
-</pre></div>
+
+```
+from picuno import board
+```
 
 
 ### Sample usage:
 1) Neopixel module:<br>
 
-   <!-- HTML generated using hilite.me -->
-<div style="background: #111111; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #fb660a; font-weight: bold">import</span> <span style="color: #ffffff">time</span>
-<span style="color: #fb660a; font-weight: bold">from</span> <span style="color: #ffffff">picuno</span> <span style="color: #fb660a; font-weight: bold">import</span> <span style="color: #ffffff">Neopixel</span>
- 
-<span style="color: #ffffff">numpix</span> <span style="color: #ffffff">=</span> <span style="color: #0086f7; font-weight: bold">30</span>
-<span style="color: #ffffff">pixels</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">Neopixel(numpix,</span> <span style="color: #0086f7; font-weight: bold">0</span><span style="color: #ffffff">,</span> <span style="color: #0086f7; font-weight: bold">17</span><span style="color: #ffffff">,</span> <span style="color: #0086d2">&quot;GRB&quot;</span><span style="color: #ffffff">)</span>
- 
-<span style="color: #ffffff">yellow</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">(</span><span style="color: #0086f7; font-weight: bold">255</span><span style="color: #ffffff">,</span> <span style="color: #0086f7; font-weight: bold">100</span><span style="color: #ffffff">,</span> <span style="color: #0086f7; font-weight: bold">0</span><span style="color: #ffffff">)</span>
-<span style="color: #ffffff">orange</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">(</span><span style="color: #0086f7; font-weight: bold">255</span><span style="color: #ffffff">,</span> <span style="color: #0086f7; font-weight: bold">50</span><span style="color: #ffffff">,</span> <span style="color: #0086f7; font-weight: bold">0</span><span style="color: #ffffff">)</span>
-<span style="color: #ffffff">green</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">(</span><span style="color: #0086f7; font-weight: bold">0</span><span style="color: #ffffff">,</span> <span style="color: #0086f7; font-weight: bold">255</span><span style="color: #ffffff">,</span> <span style="color: #0086f7; font-weight: bold">0</span><span style="color: #ffffff">)</span>
-<span style="color: #ffffff">blue</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">(</span><span style="color: #0086f7; font-weight: bold">0</span><span style="color: #ffffff">,</span> <span style="color: #0086f7; font-weight: bold">0</span><span style="color: #ffffff">,</span> <span style="color: #0086f7; font-weight: bold">255</span><span style="color: #ffffff">)</span>
-<span style="color: #ffffff">red</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">(</span><span style="color: #0086f7; font-weight: bold">255</span><span style="color: #ffffff">,</span> <span style="color: #0086f7; font-weight: bold">0</span><span style="color: #ffffff">,</span> <span style="color: #0086f7; font-weight: bold">0</span><span style="color: #ffffff">)</span>
-<span style="color: #ffffff">color0</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">red</span>
- 
-<span style="color: #ffffff">pixels.brightness(</span><span style="color: #0086f7; font-weight: bold">50</span><span style="color: #ffffff">)</span>
-<span style="color: #ffffff">pixels.fill(orange)</span>
-<span style="color: #ffffff">pixels.set_pixel_line_gradient(</span><span style="color: #0086f7; font-weight: bold">3</span><span style="color: #ffffff">,</span> <span style="color: #0086f7; font-weight: bold">13</span><span style="color: #ffffff">,</span> <span style="color: #ffffff">green,</span> <span style="color: #ffffff">blue)</span>
-<span style="color: #ffffff">pixels.set_pixel_line(</span><span style="color: #0086f7; font-weight: bold">14</span><span style="color: #ffffff">,</span> <span style="color: #0086f7; font-weight: bold">16</span><span style="color: #ffffff">,</span> <span style="color: #ffffff">red)</span>
-<span style="color: #ffffff">pixels.set_pixel(</span><span style="color: #0086f7; font-weight: bold">20</span><span style="color: #ffffff">,</span> <span style="color: #ffffff">(</span><span style="color: #0086f7; font-weight: bold">255</span><span style="color: #ffffff">,</span> <span style="color: #0086f7; font-weight: bold">255</span><span style="color: #ffffff">,</span> <span style="color: #0086f7; font-weight: bold">255</span><span style="color: #ffffff">))</span>
- 
-<span style="color: #fb660a; font-weight: bold">while</span> <span style="color: #fb660a; font-weight: bold">True</span><span style="color: #ffffff">:</span>
-    <span style="color: #fb660a; font-weight: bold">if</span> <span style="color: #ffffff">color0</span> <span style="color: #ffffff">==</span> <span style="color: #ffffff">red:</span>
-       <span style="color: #ffffff">color0</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">yellow</span>
-       <span style="color: #ffffff">color1</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">red</span>
-    <span style="color: #fb660a; font-weight: bold">else</span><span style="color: #ffffff">:</span>
-        <span style="color: #ffffff">color0</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">red</span>
-        <span style="color: #ffffff">color1</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">yellow</span>
-    <span style="color: #ffffff">pixels.set_pixel(</span><span style="color: #0086f7; font-weight: bold">0</span><span style="color: #ffffff">,</span> <span style="color: #ffffff">color0)</span>
-    <span style="color: #ffffff">pixels.set_pixel(</span><span style="color: #0086f7; font-weight: bold">1</span><span style="color: #ffffff">,</span> <span style="color: #ffffff">color1)</span>
-    <span style="color: #ffffff">pixels.show()</span>
-    <span style="color: #ffffff">time.sleep(</span><span style="color: #0086f7; font-weight: bold">1</span><span style="color: #ffffff">)</span>
-</pre></div>
+``` import time
+from picuno import Neopixel
+numpix = 30
+pixels = Neopixel(numpix, 0, 17, "GRB")
+
+
+yellow = (255, 100, 0)
+orange = (255, 50, 0)
+green = (0, 255, 0)
+blue = (0, 0, 255)
+red = (255, 0, 0)
+color0 = red
+
+
+pixels.brightness(50)
+pixels.fill(orange)
+pixels.set_pixel_line_gradient(3, 13, green, blue)
+pixels.set_pixel_line(14, 16, red)
+pixels.set_pixel(20, (255, 255, 255))
+
+
+while True:
+	if color0 == red:
+		color0 = yellow
+		color1 = red
+	else:
+		color0 = red
+		color1 = yellow
+	pixels.set_pixel(0, color0)
+	pixels.set_pixel(1, color1)
+	pixels.show()
+	time.sleep(1)
+```
+
 
 2) board Module: <br>
- <!-- HTML generated using hilite.me --><div style="background: #111111; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #fb660a; font-weight: bold">from</span> <span style="color: #ffffff">picuno</span> <span style="color: #fb660a; font-weight: bold">import</span> <span style="color: #ffffff">board</span>
-<span style="color: #fb660a; font-weight: bold">import</span> <span style="color: #ffffff">rp2</span>
-<span style="color: #fb660a; font-weight: bold">from</span> <span style="color: #ffffff">machine</span> <span style="color: #fb660a; font-weight: bold">import</span> <span style="color: #ffffff">Pin</span>
-<span style="color: #fb660a; font-weight: bold">import</span> <span style="color: #ffffff">utime</span>
+```
+from picuno import board
+import rp2
+from machine import Pin
+import utime
 
-<span style="color: #ffffff">board.lvlpins()</span>
 
-<span style="color: #fb660a; font-weight: bold">while</span> <span style="color: #fb660a; font-weight: bold">True</span><span style="color: #ffffff">:</span>
-    <span style="color: #ffffff">board.LED_BUILTIN.value(</span><span style="color: #0086f7; font-weight: bold">0</span><span style="color: #ffffff">)</span>
-    <span style="color: #ffffff">utime.sleep(</span><span style="color: #0086f7; font-weight: bold">2</span><span style="color: #ffffff">)</span>
-    <span style="color: #ffffff">board.LED_BUILTIN.value(</span><span style="color: #0086f7; font-weight: bold">1</span><span style="color: #ffffff">)</span>
-    <span style="color: #ffffff">utime.sleep(</span><span style="color: #0086f7; font-weight: bold">2</span><span style="color: #ffffff">)</span>
-    <span style="color: #ffffff">machine.Pin(</span><span style="color: #0086f7; font-weight: bold">2</span><span style="color: #ffffff">,</span> <span style="color: #ffffff">machine.Pin.OUT).value(</span><span style="color: #0086f7; font-weight: bold">1</span><span style="color: #ffffff">)</span>
-    <span style="color: #ffffff">utime.sleep(</span><span style="color: #0086f7; font-weight: bold">1</span><span style="color: #ffffff">)</span>
-    <span style="color: #ffffff">machine.Pin(</span><span style="color: #0086f7; font-weight: bold">2</span><span style="color: #ffffff">,</span> <span style="color: #ffffff">machine.Pin.OUT).value(</span><span style="color: #0086f7; font-weight: bold">0</span><span style="color: #ffffff">)</span>
-    <span style="color: #ffffff">utime.sleep(</span><span style="color: #0086f7; font-weight: bold">1</span><span style="color: #ffffff">)</span>
-</pre></div>
+board.lvlpins()
 
+
+while True:
+	board.LED_BUILTIN.value(0)
+	utime.sleep(2)
+	board.LED_BUILTIN.value(1)
+	utime.sleep(2)
+	machine.Pin(2, machine.Pin.OUT).value(1)
+	utime.sleep(1)
+	machine.Pin(2, machine.Pin.OUT).value(0)
+	utime.sleep(1)
+```
 ## Credits
 Code maintained by Atul Ravi-Founder Atrivatech P Ltd <br>
 Special Thanks to CodeItDoIt on GitHub for the addition of comments. 
