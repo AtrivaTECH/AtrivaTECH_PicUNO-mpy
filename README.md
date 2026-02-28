@@ -23,6 +23,7 @@ from picuno import board
 
 ``` import time
 from picuno import Neopixel
+import time
 numpix = 30
 pixels = Neopixel(numpix, 0, 17, "GRB")
 
